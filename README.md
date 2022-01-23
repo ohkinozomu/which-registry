@@ -5,8 +5,8 @@ Returns which registry from the container image name.
 # Supported registry
 
 - Docker Hub
-- Amazon Elastic Container Registry Public (TODO)
-- Amazon Elastic Container Registry(private) (TODO)
+- Amazon Elastic Container Registry Public
+- Amazon Elastic Container Registry(private)
 
 # License
 
