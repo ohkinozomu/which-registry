@@ -2,6 +2,20 @@
 
 Returns which registry from the container image name.
 
+# Example
+
+```
+import(
+  wr "github.com/ohkinozomu/which-registry"
+)
+
+image := "nginx:alpine"
+registry, _ := wr.Which(image)
+
+// Docker Hub
+fmt.Println(registry)
+```
+
 # Supported registry
 
 - Docker Hub
