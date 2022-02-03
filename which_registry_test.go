@@ -23,6 +23,10 @@ func TestWhich(t *testing.T) {
 			image:    "111111111111.dkr.ecr.us-east-1.amazonaws.com/nginx:1.21",
 			registry: ECR_PRIVATE,
 		},
+		{
+			image:    "us-east1-docker.pkg.dev/my-project/my-repo/test-image",
+			registry: ARTIFACT_REGISTRY,
+		},
 	}
 
 	for _, test := range tests {
@@ -31,7 +35,7 @@ func TestWhich(t *testing.T) {
 			t.Fatalf("failed test: %v\n", err)
 		}
 		if r != test.registry {
-			t.Fatalf("failed test: %v\n", r)
+			t.Fatalf("failed test: %v %v\n", test.image, r)
 		}
 	}
 }

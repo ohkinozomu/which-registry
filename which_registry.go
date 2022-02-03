@@ -1,6 +1,7 @@
 package which_registry
 
 import (
+	"regexp"
 	"strings"
 )
 
@@ -16,6 +17,17 @@ func isECRPrivate(d string) bool {
 		return true
 	}
 	return false
+}
+
+// https://cloud.google.com/artifact-registry/docs/docker/pushing-and-pulling#tag
+func isArtifactRegistry(d string) (bool, error) {
+
+	// TODO: location check
+	match, err := regexp.MatchString(".*-docker.pkg.dev", d)
+	if err != nil {
+		return false, err
+	}
+	return match, nil
 }
 
 func Which(image string) (Registry, error) {
@@ -36,5 +48,14 @@ func Which(image string) (Registry, error) {
 	if isECRPrivate(domain) {
 		return ECR_PRIVATE, nil
 	}
+
+	isar, err := isArtifactRegistry(domain)
+	if err != nil {
+		return r, err
+	}
+	if isar {
+		return ARTIFACT_REGISTRY, nil
+	}
+
 	return r, nil
 }
