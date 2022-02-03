@@ -7,7 +7,8 @@ const (
 	DOCKER_HUB
 	ECR_PUBLIC
 	ECR_PRIVATE
-	ARTIFACT_REGISTRY
+	GOOGLE_ARTIFACT_REGISTRY
+	GOOGLE_CONTAINER_REGISTRY
 )
 
 func (r Registry) String() string {
@@ -20,8 +21,10 @@ func (r Registry) String() string {
 		return "Amazon Elastic Container Registry Public"
 	case ECR_PRIVATE:
 		return "Amazon Elastic Container Registry(private)"
-	case ARTIFACT_REGISTRY:
-		return "Artifact Registry"
+	case GOOGLE_ARTIFACT_REGISTRY:
+		return "Google Artifact Registry"
+	case GOOGLE_CONTAINER_REGISTRY:
+		return "Google Container Registry"
 	default:
 		return "Unknown"
 	}
