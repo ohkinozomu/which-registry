@@ -25,7 +25,15 @@ func TestWhich(t *testing.T) {
 		},
 		{
 			image:    "us-east1-docker.pkg.dev/my-project/my-repo/test-image",
-			registry: ARTIFACT_REGISTRY,
+			registry: GOOGLE_ARTIFACT_REGISTRY,
+		},
+		{
+			image:    "gcr.io/example.com/my-project/image-name",
+			registry: GOOGLE_CONTAINER_REGISTRY,
+		},
+		{
+			image:    "us.gcr.io/builds/product1/dev/product1-app:beta-2.0",
+			registry: GOOGLE_CONTAINER_REGISTRY,
 		},
 	}
 

@@ -20,10 +20,19 @@ func isECRPrivate(d string) bool {
 }
 
 // https://cloud.google.com/artifact-registry/docs/docker/pushing-and-pulling#tag
-func isArtifactRegistry(d string) (bool, error) {
-
+func isGoogleArtifactRegistry(d string) (bool, error) {
 	// TODO: location check
 	match, err := regexp.MatchString(".*-docker.pkg.dev", d)
+	if err != nil {
+		return false, err
+	}
+	return match, nil
+}
+
+// https://cloud.google.com/container-registry/docs/overview#registries
+func isGoogleContainerRegistry(d string) (bool, error) {
+	// TODO: location check
+	match, err := regexp.MatchString(".*gcr.io", d)
 	if err != nil {
 		return false, err
 	}
@@ -49,12 +58,20 @@ func Which(image string) (Registry, error) {
 		return ECR_PRIVATE, nil
 	}
 
-	isar, err := isArtifactRegistry(domain)
+	isgar, err := isGoogleArtifactRegistry(domain)
 	if err != nil {
 		return r, err
 	}
-	if isar {
-		return ARTIFACT_REGISTRY, nil
+	if isgar {
+		return GOOGLE_ARTIFACT_REGISTRY, nil
+	}
+
+	isgcr, err := isGoogleContainerRegistry(domain)
+	if err != nil {
+		return r, err
+	}
+	if isgcr {
+		return GOOGLE_CONTAINER_REGISTRY, nil
 	}
 
 	return r, nil
