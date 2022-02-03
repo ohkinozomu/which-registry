@@ -21,7 +21,7 @@ fmt.Println(registry)
 - Docker Hub
 - Amazon Elastic Container Registry Public
 - Amazon Elastic Container Registry(private)
-- Artifact Registry
+- Google Artifact Registry
 - Google Container Registry
 - Azure Container Registry(TODO)
 - Quay.io(TODO)
