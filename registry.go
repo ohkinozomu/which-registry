@@ -9,6 +9,7 @@ const (
 	ECR_PRIVATE
 	GOOGLE_ARTIFACT_REGISTRY
 	GOOGLE_CONTAINER_REGISTRY
+	QUAY_IO
 )
 
 func (r Registry) String() string {
@@ -25,6 +26,8 @@ func (r Registry) String() string {
 		return "Google Artifact Registry"
 	case GOOGLE_CONTAINER_REGISTRY:
 		return "Google Container Registry"
+	case QUAY_IO:
+		return "Quay.io"
 	default:
 		return "Unknown"
 	}
