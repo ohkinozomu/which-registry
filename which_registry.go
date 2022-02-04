@@ -1,22 +1,41 @@
 package which_registry
 
 import (
+	"errors"
 	"regexp"
 	"strings"
+
+	regions "github.com/jsonmaur/aws-regions/v2"
 )
 
 func parseRepo(r string) string {
 	return strings.Split(r, "/")[0]
 }
 
-// https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html#registry_concepts
-func isECRPrivate(d string) bool {
-	s := strings.Split(d, ".")
-	// TODO: region check?
-	if s[1] == "dkr" && s[2] == "ecr" && s[4] == "amazonaws" && s[5] == "com" {
-		return true
+func validateRegion(region string) error {
+	_, err := regions.LookupByCode(region)
+	if err != nil {
+		return errors.New("Invalid Region: " + region)
 	}
-	return false
+	return nil
+}
+
+// https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html#registry_concepts
+func isECRPrivate(d string) (bool, error) {
+	s := strings.Split(d, ".")
+	if len(s) <= 3 {
+		return false, nil
+	}
+
+	err := validateRegion(s[3])
+	if err != nil {
+		return false, err
+	}
+
+	if s[1] == "dkr" && s[2] == "ecr" && s[4] == "amazonaws" && s[5] == "com" {
+		return true, nil
+	}
+	return false, nil
 }
 
 // https://cloud.google.com/artifact-registry/docs/docker/pushing-and-pulling#tag
@@ -54,7 +73,11 @@ func Which(image string) (Registry, error) {
 		return ECR_PUBLIC, nil
 	}
 
-	if isECRPrivate(domain) {
+	isecrpm, err := isECRPrivate(domain)
+	if err != nil {
+		return r, err
+	}
+	if isecrpm {
 		return ECR_PRIVATE, nil
 	}
 

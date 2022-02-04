@@ -1,6 +1,7 @@
 package which_registry
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -52,5 +53,20 @@ func TestParseRepo(t *testing.T) {
 	r := "docker.io/library/nginx"
 	if parseRepo(r) != "docker.io" {
 		t.Fatalf("failed test: %v\n", r)
+	}
+}
+
+func TestValidateRegion(t *testing.T) {
+	region := "us-east-1"
+	err := validateRegion(region)
+	if err != nil {
+		t.Fatalf("failed test: %v\n", region)
+	}
+
+	region = "us-east-1000000"
+	err = validateRegion(region)
+	if err.Error() != "Invalid Region: "+region {
+		fmt.Println(err)
+		t.Fatalf("failed test: %v\n", region)
 	}
 }
