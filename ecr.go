@@ -26,12 +26,11 @@ func isECRPrivate(d string) (bool, error) {
 		return false, nil
 	}
 
-	err := validateRegion(s[3])
-	if err != nil {
-		return false, err
-	}
-
 	if s[1] == "dkr" && s[2] == "ecr" && s[4] == "amazonaws" && s[5] == "com" {
+		err := validateRegion(s[3])
+		if err != nil {
+			return false, err
+		}
 		return true, nil
 	}
 	return false, nil
