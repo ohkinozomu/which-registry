@@ -21,6 +21,8 @@ func Which(image string) (Registry, error) {
 		return DOCKER_HUB, nil
 	} else if isECRPublic(domain) {
 		return ECR_PUBLIC, nil
+	} else if isQuayIO(domain) {
+		return QUAY_IO, nil
 	}
 
 	isecrpm, err := isECRPrivate(domain)

@@ -16,15 +16,14 @@ registry, _ := wr.Which(image)
 fmt.Println(registry)
 ```
 
-# Supported registry
+# Supported registries
 
 - Docker Hub
 - Amazon Elastic Container Registry Public
 - Amazon Elastic Container Registry(private)
 - Google Artifact Registry
 - Google Container Registry
-- Azure Container Registry(TODO)
-- Quay.io(TODO)
+- Quay.io
 
 # License
 

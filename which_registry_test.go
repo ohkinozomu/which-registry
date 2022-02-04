@@ -1,7 +1,6 @@
 package which_registry
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -36,6 +35,14 @@ func TestWhich(t *testing.T) {
 			image:    "us.gcr.io/builds/product1/dev/product1-app:beta-2.0",
 			registry: GOOGLE_CONTAINER_REGISTRY,
 		},
+		{
+			image:    "docker.elastic.co/elasticsearch/elasticsearch",
+			registry: UNKNOWN,
+		},
+		{
+			image:    "quay.io/bitnami/nginx",
+			registry: QUAY_IO,
+		},
 	}
 
 	for _, test := range tests {
@@ -53,20 +60,5 @@ func TestParseRepo(t *testing.T) {
 	r := "docker.io/library/nginx"
 	if parseRepo(r) != "docker.io" {
 		t.Fatalf("failed test: %v\n", r)
-	}
-}
-
-func TestValidateRegion(t *testing.T) {
-	region := "us-east-1"
-	err := validateRegion(region)
-	if err != nil {
-		t.Fatalf("failed test: %v\n", region)
-	}
-
-	region = "us-east-1000000"
-	err = validateRegion(region)
-	if err.Error() != "Invalid Region: "+region {
-		fmt.Println(err)
-		t.Fatalf("failed test: %v\n", region)
 	}
 }
