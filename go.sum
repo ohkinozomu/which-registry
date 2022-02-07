@@ -1,5 +1,7 @@
 github.com/docker/distribution v2.7.1+incompatible h1:a5mlkVzth6W5A4fOsS3D2EO5BUmsJpcB+cRlLU7cSug=
 github.com/docker/distribution v2.7.1+incompatible/go.mod h1:J2gT2udsDAN96Uj4KfcMRqY0/ypR+oyYUYmja8H+y+w=
+github.com/docker/distribution v2.8.0+incompatible h1:l9EaZDICImO1ngI+uTifW+ZYvvz7fKISBAKpg+MbWbY=
+github.com/docker/distribution v2.8.0+incompatible/go.mod h1:J2gT2udsDAN96Uj4KfcMRqY0/ypR+oyYUYmja8H+y+w=
 github.com/jsonmaur/aws-regions/v2 v2.3.1 h1:WWt452LyhjI4ZCRKBSULVHqIGE8/9UqVQOSAzuc2woE=
 github.com/jsonmaur/aws-regions/v2 v2.3.1/go.mod h1:NqtmZ2wG5HkrTYFQ+II3BDysj0yek59yjtZjAaCn8lE=
 github.com/opencontainers/go-digest v1.0.0 h1:apOUWs51W5PlhuyGyz9FCeeBIOUDA/6nW8Oi/yOhh5U=
