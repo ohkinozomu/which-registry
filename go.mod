@@ -3,7 +3,7 @@ module github.com/ohkinozomu/which-registry
 go 1.17
 
 require (
-	github.com/docker/distribution v2.7.1+incompatible
+	github.com/docker/distribution v2.8.0+incompatible
 	github.com/jsonmaur/aws-regions/v2 v2.3.1
 )
 
