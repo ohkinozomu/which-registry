@@ -25,27 +25,27 @@ func Which(image string) (Registry, error) {
 		return QUAY_IO, nil
 	}
 
-	isecrpm, err := isECRPrivate(domain)
+	isECRp, err := isECRPrivate(domain)
 	if err != nil {
 		return r, err
 	}
-	if isecrpm {
+	if isECRp {
 		return ECR_PRIVATE, nil
 	}
 
-	isgar, err := isGoogleArtifactRegistry(domain)
+	isGAR, err := isGoogleArtifactRegistry(domain)
 	if err != nil {
 		return r, err
 	}
-	if isgar {
+	if isGAR {
 		return GOOGLE_ARTIFACT_REGISTRY, nil
 	}
 
-	isgcr, err := isGoogleContainerRegistry(domain)
+	isGCR, err := isGoogleContainerRegistry(domain)
 	if err != nil {
 		return r, err
 	}
-	if isgcr {
+	if isGCR {
 		return GOOGLE_CONTAINER_REGISTRY, nil
 	}
 
