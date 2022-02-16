@@ -1,8 +1,8 @@
-github.com/docker/distribution v2.7.1+incompatible h1:a5mlkVzth6W5A4fOsS3D2EO5BUmsJpcB+cRlLU7cSug=
-github.com/docker/distribution v2.7.1+incompatible/go.mod h1:J2gT2udsDAN96Uj4KfcMRqY0/ypR+oyYUYmja8H+y+w=
 github.com/docker/distribution v2.8.0+incompatible h1:l9EaZDICImO1ngI+uTifW+ZYvvz7fKISBAKpg+MbWbY=
 github.com/docker/distribution v2.8.0+incompatible/go.mod h1:J2gT2udsDAN96Uj4KfcMRqY0/ypR+oyYUYmja8H+y+w=
 github.com/jsonmaur/aws-regions/v2 v2.3.1 h1:WWt452LyhjI4ZCRKBSULVHqIGE8/9UqVQOSAzuc2woE=
 github.com/jsonmaur/aws-regions/v2 v2.3.1/go.mod h1:NqtmZ2wG5HkrTYFQ+II3BDysj0yek59yjtZjAaCn8lE=
+github.com/ohkinozomu/gcp-regions v0.0.1 h1:OCOCPyhwIGMR6ao0bwIMQwz5rDMDRLN9O2SH3kvzuyw=
+github.com/ohkinozomu/gcp-regions v0.0.1/go.mod h1:a69vJkNVbFBMhvI68qO36vYNC76eG9eWWBtoXIz5AaY=
 github.com/opencontainers/go-digest v1.0.0 h1:apOUWs51W5PlhuyGyz9FCeeBIOUDA/6nW8Oi/yOhh5U=
 github.com/opencontainers/go-digest v1.0.0/go.mod h1:0JzlMkj0TRzQZfJkVvzbP0HBR3IKzErnv2BNG4W4MAM=
