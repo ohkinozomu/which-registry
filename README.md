@@ -4,7 +4,7 @@ Returns which registry from the container image name.
 
 # Example
 
-```
+```go
 import(
   wr "github.com/ohkinozomu/which-registry"
 )
