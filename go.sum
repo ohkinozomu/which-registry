@@ -6,5 +6,7 @@ github.com/ohkinozomu/gcp-regions v0.0.1 h1:OCOCPyhwIGMR6ao0bwIMQwz5rDMDRLN9O2SH
 github.com/ohkinozomu/gcp-regions v0.0.1/go.mod h1:a69vJkNVbFBMhvI68qO36vYNC76eG9eWWBtoXIz5AaY=
 github.com/ohkinozomu/gcp-regions v0.0.2 h1:zEU4/ejggS7+a6J/vOPvAHj0Lv8DD1oRnJ4bRP1Y9kk=
 github.com/ohkinozomu/gcp-regions v0.0.2/go.mod h1:a69vJkNVbFBMhvI68qO36vYNC76eG9eWWBtoXIz5AaY=
+github.com/ohkinozomu/gcp-regions v0.1.0 h1:Pv9EYoJB0TKGXlAukbcl+o70k7BQMb2XllExNDb7hLE=
+github.com/ohkinozomu/gcp-regions v0.1.0/go.mod h1:5FiT3E0SVumwPdrxQnJvVHiSCXqyC2UCWiz3fyiospQ=
 github.com/opencontainers/go-digest v1.0.0 h1:apOUWs51W5PlhuyGyz9FCeeBIOUDA/6nW8Oi/yOhh5U=
 github.com/opencontainers/go-digest v1.0.0/go.mod h1:0JzlMkj0TRzQZfJkVvzbP0HBR3IKzErnv2BNG4W4MAM=
