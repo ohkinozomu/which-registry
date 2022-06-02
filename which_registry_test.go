@@ -47,6 +47,10 @@ func TestWhich(t *testing.T) {
 			image:    "quay.io/bitnami/nginx",
 			registry: QUAY_IO,
 		},
+		{
+			image: "ghcr.io/parca-dev/parca:v0.11.1",
+			registry: GITHUB_CONTAINER_REGISTRY,
+		},
 	}
 
 	for _, test := range tests {

@@ -49,5 +49,9 @@ func Which(image string) (Registry, error) {
 		return GOOGLE_CONTAINER_REGISTRY, nil
 	}
 
+	if isGitHubContainerRegistry(domain) {
+		return GITHUB_CONTAINER_REGISTRY, nil
+	}
+
 	return r, nil
 }

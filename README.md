@@ -19,6 +19,7 @@ fmt.Println(registry)
 # Supported registries
 
 - Docker Hub
+- GitHub Container Registry
 - Amazon Elastic Container Registry Public
 - Amazon Elastic Container Registry(private)
 - Google Artifact Registry
