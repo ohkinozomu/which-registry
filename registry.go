@@ -29,6 +29,8 @@ func (r Registry) String() string {
 		return "Google Container Registry"
 	case QUAY_IO:
 		return "Quay.io"
+	case GITHUB_CONTAINER_REGISTRY:
+		return "GitHub Container Registry"
 	default:
 		return "Unknown"
 	}
